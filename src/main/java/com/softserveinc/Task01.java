@@ -14,11 +14,28 @@ package com.softserveinc;
     Month with the lowest temperature in a year: I
     The month with the highest temperatures in a year: VII
  */
-public class Task01 {
+    public class Task01 {
     public static void main(String[] args) {
-                              //  I  | II | III | IV |  V  |  VI | VII | VIII | IX  |  X  | XI |  XII
-        double[] temperature = { -1.7, -1.0, 2.6,  9.0, 15.1, 19.4, 21.4, 21.2, 17.1, 11.1, 5.9,  1.4 };
-        // TODO: Write your code here
-
+        //  I  | II | III | IV |  V  |  VI | VII | VIII | IX  |  X  | XI |  XII
+        String[] month = {"I", "II", "III", "IV",  "V",  "VI", "VII",  "VIII", "IX",  "X", "XI",  "XII"};
+        double[] temperature = {-1.7, -1.0, 2.6, 9.0, 15.1, 19.4, 21.4, 21.2, 17.1, 11.1, 5.9, 1.4};
+        double sum = 0;
+        for (int i = 0; i < temperature.length; i++) {
+            sum = sum + temperature[i];
+        }
+        double average = sum / temperature.length;
+        System.out.printf("Average annual temperature: %.3f \n", average);
+        int coldMonth = 0;
+        int hotMonth = 0;
+        for (int i = 1; i < temperature.length; i++) {
+            if (temperature[i] < temperature[coldMonth]) {
+                coldMonth = i;
+            }
+            if (temperature[i] > temperature[hotMonth]) {
+                hotMonth = i;
+            }
+        }
+        System.out.println("Month with the lowest temperature in a year: " + month[coldMonth]);
+        System.out.println("The month with the highest temperatures in a year: " + month[hotMonth]);
     }
 }

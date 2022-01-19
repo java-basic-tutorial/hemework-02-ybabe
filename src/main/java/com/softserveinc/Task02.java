@@ -34,5 +34,21 @@ public class Task02 {
         Scanner scanner = new Scanner(System.in);
         // TODO: Write your code here
 
+        System.out.println("t1 >>> ");
+        double t1 = scanner.nextDouble();
+        System.out.println("t2 >>> ");
+        double t2 = scanner.nextDouble();
+        System.out.println("dt >>> ");
+        double dt = scanner.nextInt();
+        System.out.println("-----------------\n" + "C     F\n" + "-----------------");
+        do {
+            double f;
+            f = 9 * t1 / 5 + 32;
+            System.out.printf("%2.2f     %2.2f%n", t1, f);
+            t1 += dt;
+        } while (t1 <= t2);
+        System.out.println("-----------------");
     }
-}
+
+
+    }
